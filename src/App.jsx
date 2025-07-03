@@ -13,6 +13,33 @@ import Contact from './pages/Contact'
 import { useTheme } from './contexts/ThemeContext'
 import { useScrollToTop } from './hooks/useScrollToTop'
 
+// 404 Not Found Component
+const NotFound = () => {
+  return (
+    <div className="min-h-screen pt-20 flex items-center justify-center">
+      <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-6xl font-bold text-primary-600 mb-4">404</h1>
+          <h2 className="text-2xl font-semibold mb-4">Page Not Found</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-8">
+            The page you're looking for doesn't exist.
+          </p>
+          <a
+            href="/"
+            className="btn-primary"
+          >
+            Go Home
+          </a>
+        </motion.div>
+      </div>
+    </div>
+  )
+}
+
 function App() {
   const { theme } = useTheme()
   useScrollToTop()
@@ -39,33 +66,6 @@ function App() {
         </motion.main>
         <Footer />
         <ScrollToTop />
-      </div>
-    </div>
-  )
-}
-
-// 404 Not Found Component
-const NotFound = () => {
-  return (
-    <div className="min-h-screen pt-20 flex items-center justify-center">
-      <div className="text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-6xl font-bold text-primary-600 mb-4">404</h1>
-          <h2 className="text-2xl font-semibold mb-4">Page Not Found</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-8">
-            The page you're looking for doesn't exist.
-          </p>
-          <a
-            href="/"
-            className="btn-primary"
-          >
-            Go Home
-          </a>
-        </motion.div>
       </div>
     </div>
   )
